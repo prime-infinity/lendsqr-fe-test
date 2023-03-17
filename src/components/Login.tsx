@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 function Login() {
   let navigate = useNavigate();
-  const toDashBoard = () => {
+  const toDashBoard = (): void => {
     navigate("/dashboard");
   };
 

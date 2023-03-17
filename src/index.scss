@@ -7,12 +7,18 @@ $radius-5: 5px;
 $radius-100: 100px;
 $fs-16: 16px;
 $fs-12: 12px;
+$fs-14: 14px;
 $fs-40: 40px;
 $fs-20: 20px;
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
   border-radius: $radius;
+}
+@mixin sqr-img {
+  width: 24.75px;
+  height: 25px;
+  margin-right: 8%;
 }
 .gr-bg {
   background-color: $gray-background;
@@ -43,11 +49,22 @@ $fs-20: 20px;
   padding: 14px 15px 14px 15px;
   @include border-radius(5px);
 }
+.input-search {
+  background: #ffffff;
+  opacity: 0.2;
+  color: $sub-secondary-color;
+  border: 1px solid #213f7d;
+  padding: 12px 18px 12px 18px;
+  @include border-radius(8px);
+}
 .color-primary {
   color: $primary-color;
 }
 .fs-12 {
   font-size: $fs-12;
+}
+.fs-14 {
+  font-size: $fs-14;
 }
 .fs-16 {
   font-size: $fs-16;
@@ -92,8 +109,7 @@ $fs-20: 20px;
   left: 97px;
   top: 106px;
   &_sqr {
-    width: 24.75px;
-    height: 25px;
+    @include sqr-img();
     left: 97px;
     margin-right: 8%;
   }
@@ -101,4 +117,63 @@ $fs-20: 20px;
     width: 138.44px;
     height: 36px;
   }
+}
+.logo-navbar {
+  display: flex;
+  align-items: initial;
+  width: 173.76px;
+  height: 36px;
+
+  &_sqr {
+    @include sqr-img();
+  }
+}
+.dashboard-main {
+  background-color: $gray-background;
+  .navbar {
+    z-index: 2;
+    box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+    .input-group-text {
+      background-color: $primary-color;
+      border: 1px solid $primary-color;
+      @include border-radius(8px);
+      &:hover {
+        background-color: darken($primary-color, 10%);
+        cursor: pointer;
+      }
+    }
+  }
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 283px;
+    height: 100vh;
+    background: #ffffff;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 45% 0 0 0;
+
+      li {
+        margin: 0;
+        padding: 1rem;
+        padding-left: 1.8rem;
+        border-bottom: 1px solid #ccc;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid black;
 }
