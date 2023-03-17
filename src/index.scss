@@ -39,7 +39,6 @@ $fs-20:20px;
     opacity: 0.6;
     font-weight: 400;
     font-size: 14px;
-    font-family: 'Avenir Next';
     font-style: normal;
     padding:14px 15px 14px 15px;
     @include border-radius(5px);
@@ -77,5 +76,30 @@ $fs-20:20px;
             color: $sub-secondary-color;
             
         }
+    }
+    .input-group-text{
+        background-color: #fff;
+        color: $primary-color;
+        border-left: 0;
+        cursor: pointer;
+    }
+}
+.logo-float{
+    display: flex;
+    align-items: initial;
+    position: absolute;
+    width: 173.76px;
+    height: 36px;
+    left: 97px;
+    top: 106px;
+    &_sqr{
+        width: 24.75px;
+        height: 25px;
+        left: 97px;
+        margin-right: 8%;
+    }
+    &_wri{
+        width: 138.44px;
+        height: 36px;
     }
 }
