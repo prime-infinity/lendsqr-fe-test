@@ -2,7 +2,7 @@ function Login() {
   return (
     <div className="dashboard-main">
       <nav className="navbar navbar-expand-lg navbar-light bg-white">
-        <div className="container-fluid p-4">
+        <div className="container-fluid px-4 py-3">
           <a className="navbar-brand ps-2">
             <div className="logo-navbar">
               <img
@@ -95,9 +95,21 @@ function Login() {
       </nav>
       <div className="sidebar">
         <ul>
-          <li>Link 1</li>
-          <li>Link 2</li>
-          <li>Link 3</li>
+          <li className="d-flex align-items-center">
+            <span className="sidebar_icon">
+              <img src="/images/sidebar/briefcase1.png" alt="briefcaselogo" />
+            </span>
+            <span className="sidebar_text"> Switch Organisation</span>
+            <div className="arrow-down ms-3"></div>
+          </li>
+          <li className="d-flex align-items-center">
+            <span className="sidebar_icon">
+              <img src="/images/sidebar/home1.png" alt="homelogo" />
+            </span>
+            <span className="sidebar_text">Dashboard</span>
+          </li>
+          <li className="d-flex align-items-center">Link 2</li>
+          <li className="d-flex align-items-center">Link 3</li>
         </ul>
       </div>
 
