@@ -29,7 +29,7 @@ function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div
-          className="collapse navbar-collapse pe-4"
+          className="collapse navbar-collapse pe-4 me-3"
           id="navbarSupportedContent"
         >
           <ul className="navbar-nav me-auto ms-5 ps-5 mb-2 mb-lg-0">

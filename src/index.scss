@@ -1,7 +1,7 @@
 $primary-color: #39cdcc;
 $secondary-color: #213f7d;
 $sub-secondary-color: #545f7d;
-$gray-background: #e5e5e5;
+$gray-background: #fbfbfb;
 $radius-8: 8px;
 $radius-5: 5px;
 $radius-100: 100px;
@@ -10,6 +10,7 @@ $fs-12: 12px;
 $fs-14: 14px;
 $fs-40: 40px;
 $fs-20: 20px;
+$fs-24: 24px
 ::-webkit-scrollbar {
   width: 0em;
 }
@@ -73,6 +74,9 @@ $fs-20: 20px;
 .fs-16 {
   font-size: $fs-16;
 }
+.fs-24{
+    font-size: $fs-24;
+}
 .fs-40 {
   font-size: $fs-40;
 }
@@ -135,8 +139,32 @@ $fs-20: 20px;
     @include sqr-img();
   }
 }
-.dashboard-main {
+.dashboard {
   background-color: $gray-background;
+  &_sub {
+    @media screen and (min-width: 768px) {
+      padding-left: 283px;
+    }
+    .section-text{
+        color: $secondary-color;
+    }
+    .cards {
+        border: 1px solid rgba(33, 63, 125, 0.06);
+        box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+        @include border-radius(4px);
+        .num{
+            color: $sub-secondary-color;
+        }
+        .txt{
+            color: $secondary-color;
+        }
+    }
+    @media screen and (min-width: 768px) {
+        .cards{
+            width: 23.5%;
+        }
+      }
+  }
   .navbar {
     z-index: 2;
     box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
@@ -175,6 +203,7 @@ $fs-20: 20px;
       padding-left: 1.8rem;
       color: $sub-secondary-color;
     }
+
     ul {
       list-style: none;
       margin: 0;
@@ -187,7 +216,7 @@ $fs-20: 20px;
         padding-left: 1.8rem;
         &:hover {
           background-color: rgba(57, 205, 204, 0.06);
-          border-left: 1px solid $primary-color;
+          border-left: 2px solid $primary-color;
           cursor: pointer;
         }
         &:last-child {
