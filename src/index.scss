@@ -10,6 +10,10 @@ $fs-12: 12px;
 $fs-14: 14px;
 $fs-40: 40px;
 $fs-20: 20px;
+::-webkit-scrollbar {
+  width: 0em;
+}
+
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
@@ -77,6 +81,9 @@ $fs-20: 20px;
 }
 .fw-6 {
   font-weight: 600;
+}
+.fw-5 {
+  font-weight: 500;
 }
 .fw-4 {
   font-weight: 400;
@@ -154,6 +161,7 @@ $fs-20: 20px;
     &_icon {
       display: flex;
       padding: 0 0.6rem 0 0;
+      opacity: 0.4;
     }
     &_text {
       font-weight: 400;
@@ -161,17 +169,27 @@ $fs-20: 20px;
       line-height: 19px;
       color: $sub-secondary-color;
     }
+    &_label {
+      margin: 0;
+      padding: 1rem;
+      padding-left: 1.8rem;
+      color: $sub-secondary-color;
+    }
     ul {
       list-style: none;
       margin: 0;
       padding: 45% 0 0 0;
-
+      overflow-y: scroll;
+      height: 100vh;
       li {
         margin: 0;
         padding: 1rem;
         padding-left: 1.8rem;
-        //border-bottom: 1px solid #ccc;
-
+        &:hover {
+          background-color: rgba(57, 205, 204, 0.06);
+          border-left: 1px solid $primary-color;
+          cursor: pointer;
+        }
         &:last-child {
           border-bottom: none;
         }
