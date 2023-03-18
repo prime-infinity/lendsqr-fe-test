@@ -164,6 +164,13 @@ $fs-24: 24px
             width: 23.5%;
         }
       }
+    .table{
+        border: 1px solid rgba(33, 63, 125, 0.06);
+        box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+        border-collapse: inherit;
+        @include border-radius(4px);
+        tr{}
+    }
   }
   .navbar {
     z-index: 2;

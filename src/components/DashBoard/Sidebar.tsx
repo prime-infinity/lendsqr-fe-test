@@ -1,6 +1,6 @@
 function SideBar() {
   return (
-    <div className="sidebar">
+    <div className="sidebar d-none d-md-block">
       <ul>
         <li className="d-flex align-items-center">
           <span className="sidebar_icon">
