@@ -7,7 +7,10 @@ function Login() {
       <Navbar />
       <SideBar />
 
-      <div className="dashboard_sub container-fluid">
+      <div
+        className="dashboard_sub container-fluid pb-5"
+        style={{ paddingTop: "7%" }}
+      >
         <div className="row ms-md-4 pe-md-4">
           <div className="col-12 pt-5 ps-md-5 pe-md-5">
             <>
@@ -173,6 +176,41 @@ function Login() {
                       ))}
                     </tbody>
                   </table>
+                </div>
+                <div className="col-12  table-bottom">
+                  <div className="row text-center text-md-start justify-content-between">
+                    <div className="col-12 px-0 col-md-3">
+                      <div>
+                        Showing{" "}
+                        <select
+                          className="form-select mx-2 fs-14 fw-5"
+                          aria-label="Default select example"
+                        >
+                          <option selected>100</option>
+                          <option value="200">200</option>
+                          <option value="300">300</option>
+                          <option value="400">400</option>
+                        </select>{" "}
+                        out of 100
+                      </div>
+                    </div>
+                    <div
+                      className="col-md-4 col-12 d-flex pe-0 align-items-center"
+                      style={{ justifyContent: "end" }}
+                    >
+                      <span className="ar-btn-bx d-flex align-items-center">
+                        {" "}
+                        <img src="/images/dashboard/lftar.png" alt="" />{" "}
+                      </span>
+                      {[1, 2, 3, 4, 5].map((i) => (
+                        <span className="fs-16 fw-4 px-3">{i}</span>
+                      ))}
+                      <span className="ar-btn-bx d-flex align-items-center">
+                        {" "}
+                        <img src="/images/dashboard/ritar.png" alt="" />{" "}
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </>

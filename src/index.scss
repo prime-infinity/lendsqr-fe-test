@@ -251,3 +251,22 @@ $fs-24: 24px
 .text-sub-sec{
     color:$sub-secondary-color;
 }
+.table-bottom{
+    font-size: $fs-14;
+    color: $sub-secondary-color;
+    select{
+        width: 80px;
+        display: inline-block;
+        background-color: rgba(33, 63, 125, 0.1);
+        color: $secondary-color;
+        @include border-radius(4px);
+        height: 30px;
+        padding: 3px 10px; 
+    }
+   
+}
+.ar-btn-bx{
+    background: rgba(33, 63, 125, 0.1);
+    padding: 6.39px 8.71px 6.39px 8.71px;
+    @include border-radius(4px);
+}

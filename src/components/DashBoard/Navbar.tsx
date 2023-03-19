@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-white">
+    <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-white">
       <div className="container-fluid px-4 py-3">
         <a className="navbar-brand ps-2">
           <div className="logo-navbar">
