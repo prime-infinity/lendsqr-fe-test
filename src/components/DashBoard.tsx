@@ -194,10 +194,7 @@ function Login() {
                         out of 100
                       </div>
                     </div>
-                    <div
-                      className="col-md-4 col-12 d-flex pe-0 align-items-center"
-                      style={{ justifyContent: "end" }}
-                    >
+                    <div className="col-md-4 col-12 d-flex pe-md-0 align-items-center justify-content-md-end justify-content-center">
                       <span className="ar-btn-bx d-flex align-items-center">
                         {" "}
                         <img src="/images/dashboard/lftar.png" alt="" />{" "}
