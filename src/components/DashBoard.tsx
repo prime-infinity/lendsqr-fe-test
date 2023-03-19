@@ -63,26 +63,117 @@ function Login() {
             </>
             <>
               <div className="row mt-5">
-                <table className="table p-4 table-responsive ">
-                  {/*<thead>
-                    <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">First</th>
-                      <th scope="col">Last</th>
-                      <th scope="col">Handle</th>
-                    </tr>
-                    </thead>*/}
-                  <tbody>
-                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((id) => (
+                <div className="table-responsive p-0 m-0">
+                  <table className="table ps-4 pe-4 pb-4 pt-3">
+                    <tbody>
                       <tr className="">
-                        <th scope="row">{id}</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        <td className="fs-12 fw-6 text-sub-sec">
+                          ORGANISATION{" "}
+                          <span className="ps-2">
+                            <img
+                              src="/images/dashboard/threedot.png"
+                              className="d-none d-md-inline-block"
+                              alt="filtericon"
+                            />
+                          </span>
+                        </td>
+                        <td className="fs-12 fw-6 text-sub-sec">
+                          USERNAME{" "}
+                          <span className="ps-2">
+                            <img
+                              src="/images/dashboard/threedot.png"
+                              className="d-none d-md-inline-block"
+                              alt="filtericon"
+                            />
+                          </span>
+                        </td>
+                        <td className="fs-12 fw-6 text-sub-sec">
+                          EMAIL{" "}
+                          <span className="ps-2">
+                            <img
+                              src="/images/dashboard/threedot.png"
+                              className="d-none d-md-inline-block"
+                              alt="filtericon"
+                            />
+                          </span>
+                        </td>
+                        <td className="fs-12 fw-6 text-sub-sec">
+                          PHONE NUMBER{" "}
+                          <span className="ps-2">
+                            <img
+                              src="/images/dashboard/threedot.png"
+                              className="d-none d-md-inline-block"
+                              alt="filtericon"
+                            />
+                          </span>
+                        </td>
+                        <td className="fs-12 fw-6 text-sub-sec">
+                          DATE JOINED{" "}
+                          <span className="ps-2">
+                            <img
+                              src="/images/dashboard/threedot.png"
+                              className="d-none d-md-inline-block"
+                              alt="filtericon"
+                            />
+                          </span>
+                        </td>
+                        <td className="fs-12 fw-6 text-sub-sec">
+                          STATUS{" "}
+                          <span className="ps-2">
+                            <img
+                              src="/images/dashboard/threedot.png"
+                              className="d-none d-md-inline-block"
+                              alt="filtericon"
+                            />
+                          </span>
+                        </td>
+                        <td className="fs-12 fw-6 text-sub-sec"></td>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((id) => (
+                        <tr className="align-middle">
+                          <td>
+                            <span className="fs-14 text-sub-sec fw-4">
+                              Lendsqr
+                            </span>
+                          </td>
+                          <td>
+                            <span className="fs-14 text-sub-sec fw-4">
+                              Adedeji
+                            </span>
+                          </td>
+                          <td>
+                            <span className="fs-14 text-sub-sec fw-4">
+                              adedeji@lendsqr.com
+                            </span>
+                          </td>
+                          <td>
+                            <span className="fs-14 text-sub-sec fw-4">
+                              08078903721
+                            </span>
+                          </td>
+                          <td>
+                            <span className="fs-14 text-sub-sec fw-4">
+                              May 15, 2020 10:00 AM
+                            </span>
+                          </td>
+                          <td>
+                            <span className="table-status-btn fs-14 fw-4 text-sub-sec py-2 px-3">
+                              Inactive
+                            </span>
+                          </td>
+                          <td>
+                            <span>
+                              <img
+                                src="/images/dashboard/verticaldots.png"
+                                alt=""
+                              />
+                            </span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </>
           </div>
