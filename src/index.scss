@@ -270,3 +270,22 @@ $fs-24: 24px
     padding: 6.39px 8.71px 6.39px 8.71px;
     @include border-radius(4px);
 }
+.no-btn{
+    border: none;
+    background: none;
+    outline: none;
+    box-shadow: none;
+}
+.dropdown-menu{
+    background: #FFFFFF;
+    border: 1px solid rgba(84, 95, 125, 0.04);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    @include border-radius(4px);
+    span{
+        display: flex;
+        align-items: center;
+    }
+    li{
+        padding: 6px 0px 6px 0px;
+    }
+}

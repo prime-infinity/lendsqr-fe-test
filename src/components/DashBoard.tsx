@@ -1,6 +1,6 @@
 import Navbar from "./DashBoard/Navbar";
 import SideBar from "./DashBoard/Sidebar";
-
+/* eslint-disable jsx-a11y/anchor-is-valid */
 function Login() {
   return (
     <div className="dashboard">
@@ -133,7 +133,7 @@ function Login() {
                         <td className="fs-12 fw-6 text-sub-sec"></td>
                       </tr>
                       {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((id) => (
-                        <tr className="align-middle">
+                        <tr key={id} className="align-middle">
                           <td>
                             <span className="fs-14 text-sub-sec fw-4">
                               Lendsqr
@@ -166,10 +166,55 @@ function Login() {
                           </td>
                           <td>
                             <span>
-                              <img
-                                src="/images/dashboard/verticaldots.png"
-                                alt=""
-                              />
+                              <div className="dropdown">
+                                <button
+                                  className="no-btn"
+                                  type="button"
+                                  id="dropdownMenuButton1"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                >
+                                  <img
+                                    src="/images/dashboard/verticaldots.png"
+                                    alt=""
+                                  />
+                                </button>
+                                <ul
+                                  className="dropdown-menu "
+                                  aria-labelledby="dropdownMenuButton1"
+                                >
+                                  <li>
+                                    <span className="dropdown-item fs-14 fw-5 text-sub-sec">
+                                      <img
+                                        src="/images/dashboard/viewde.png"
+                                        alt=""
+                                        className="pe-2"
+                                      />
+                                      View Details
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="dropdown-item fs-14 fw-5 text-sub-sec">
+                                      <img
+                                        src="/images/dashboard/blacklistuser.png"
+                                        alt=""
+                                        className="pe-2"
+                                      />
+                                      Blacklist User
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="dropdown-item fs-14 fw-5 text-sub-sec">
+                                      <img
+                                        src="/images/dashboard/activateuser.png"
+                                        alt=""
+                                        className="pe-2"
+                                      />
+                                      Activate User
+                                    </span>
+                                  </li>
+                                </ul>
+                              </div>
                             </span>
                           </td>
                         </tr>
@@ -186,7 +231,7 @@ function Login() {
                           className="form-select mx-2 fs-14 fw-5"
                           aria-label="Default select example"
                         >
-                          <option selected>100</option>
+                          <option>100</option>
                           <option value="200">200</option>
                           <option value="300">300</option>
                           <option value="400">400</option>
@@ -200,7 +245,9 @@ function Login() {
                         <img src="/images/dashboard/lftar.png" alt="" />{" "}
                       </span>
                       {[1, 2, 3, 4, 5].map((i) => (
-                        <span className="fs-16 fw-4 px-3">{i}</span>
+                        <span key={i} className="fs-16 fw-4 px-3">
+                          {i}
+                        </span>
                       ))}
                       <span className="ar-btn-bx d-flex align-items-center">
                         {" "}
