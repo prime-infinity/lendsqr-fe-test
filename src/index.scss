@@ -10,6 +10,7 @@ $fs-12: 12px;
 $fs-14: 14px;
 $fs-40: 40px;
 $fs-20: 20px;
+$fs-22: 22px;
 $fs-24: 24px
 ::-webkit-scrollbar {
   width: 0em;
@@ -24,6 +25,12 @@ $fs-24: 24px
   width: 24.75px;
   height: 25px;
   margin-right: 8%;
+}
+@mixin table-prop {
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-collapse: inherit;
+    background: #FFFFFF;
 }
 .gr-bg {
   background-color: $gray-background;
@@ -76,6 +83,9 @@ $fs-24: 24px
 }
 .fs-24{
     font-size: $fs-24;
+}
+.fs-22{
+    font-size: $fs-22;
 }
 .fs-40 {
   font-size: $fs-40;
@@ -165,10 +175,7 @@ $fs-24: 24px
         }
       }
     .table{
-        border: 1px solid rgba(33, 63, 125, 0.06);
-        box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
-        border-collapse: inherit;
-        background: #FFFFFF;
+        @include table-prop;
         @include border-radius(4px);
         td{
             padding-top: 1.2rem;
@@ -248,6 +255,9 @@ $fs-24: 24px
   border-right: 5px solid transparent;
   border-top: 5px solid black;
 }
+.text-sec{
+    color:$secondary-color;
+}
 .text-sub-sec{
     color:$sub-secondary-color;
 }
@@ -289,5 +299,55 @@ $fs-24: 24px
     }
     li{
         padding: 6px 0px 6px 0px;
+    }
+}
+.btn-n-black,.btn-n-activ{
+    @include border-radius(8px);
+}
+.btn-n-black{
+    border: 1px solid #E4033B;
+    color: #E4033B;
+    &:hover {
+        background-color: darken(#E4033B, 10%);
+        color:white;
+      }
+}
+.btn-n-activ{
+    border: 1px solid #39CDCC;
+    color: #39cdcc;
+    &:hover {
+        background-color: darken(#39CDCC, 10%);
+        color:white;
+      }
+}
+.text-hover-to-pri{
+    &:hover {
+        color:$primary-color;
+        border-bottom: 2px solid $primary-color;
+        cursor: pointer;
+      }
+}
+.personal-info{
+    .table{
+        @include table-prop;
+        border: 0px;
+        @include border-radius(4px);
+        td{
+            font-size: 16px;
+            font-weight: 500;
+            color: $sub-secondary-color;
+            padding-top: 0rem;
+            padding-bottom: 0rem;
+        }
+        th{
+            text-transform: uppercase;
+            color: $sub-secondary-color;
+            font-size: 12px;
+            font-weight: 400;
+        }
+        .table-status-btn{
+            background-color: rgba(84,95,125, 0.06);
+            @include border-radius(100px);
+        }
     }
 }

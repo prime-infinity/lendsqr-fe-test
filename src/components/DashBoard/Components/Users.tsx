@@ -1,4 +1,11 @@
+import { useNavigate } from "react-router-dom";
+
 function Users() {
+  let navigate = useNavigate();
+  const toUserDetails = (id: string): void => {
+    navigate("/dashboard/user-details");
+    console.log(id);
+  };
   return (
     <>
       <>
@@ -167,7 +174,7 @@ function Users() {
                             className="dropdown-menu "
                             aria-labelledby="dropdownMenuButton1"
                           >
-                            <li>
+                            <li onClick={() => toUserDetails(id.toString())}>
                               <span className="dropdown-item fs-14 fw-5 text-sub-sec">
                                 <img
                                   src="/images/dashboard/viewde.png"
