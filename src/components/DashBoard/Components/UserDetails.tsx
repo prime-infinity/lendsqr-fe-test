@@ -39,7 +39,7 @@ function UserDetails() {
         <div className="row pt-3 ">
           <div className="col-12 pt-4 ps-4 pe-4 bg-white">
             <div className="row pt-2">
-              <div className="col-md-9 col-12">
+              <div className="col-md-11 col-12">
                 <div className="row">
                   <div className="col-md-5 col-12">
                     <div className="row">
@@ -50,10 +50,7 @@ function UserDetails() {
                           alt="avatar"
                         />
                       </div>
-                      <div
-                        className="col-7 d-flex align-items-center"
-                        style={{ borderRight: "1px solid silver" }}
-                      >
+                      <div className="col-7 d-flex align-items-center">
                         <div className="row">
                           <div className="col-12 fs-22 fw-5 text-sec">
                             Grace Effiom
@@ -65,9 +62,15 @@ function UserDetails() {
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-2 col-12 d-flex align-items-center">
-                    <div className="row justify-content-center ps-md-1">
-                      <div className="col-12 ps-md-3">
+                  <div
+                    className="col-md-2 text-center col-12 d-flex align-items-center"
+                    style={{
+                      borderLeft: "1px solid silver",
+                      borderRight: "1px solid silver",
+                    }}
+                  >
+                    <div className="row mx-auto ">
+                      <div className="col-12">
                         <span className="fs-14 text-sub-sec fw-5">
                           User’s Tier
                         </span>
@@ -89,10 +92,7 @@ function UserDetails() {
                       </div>
                     </div>
                   </div>
-                  <div
-                    className="col-md-4 ps-md-4 col-12 d-flex align-items-center"
-                    style={{ borderLeft: "1px solid silver" }}
-                  >
+                  <div className="col-md-3 ps-md-4 col-12 d-flex align-items-center">
                     <div className="row ps-md-3">
                       <div className="col-12 fs-22 text-sec fw-5">
                         ₦200,000.00
