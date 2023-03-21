@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Users() {
@@ -6,6 +7,29 @@ function Users() {
     navigate("/dashboard/user-details");
     console.log(id);
   };
+
+  interface UserData {
+    id: string;
+    userName: string;
+    email: string;
+    orgName: string;
+    phoneNumber: string;
+    createdAt: string;
+  }
+
+  const [users, setUsers] = useState<UserData[]>([]);
+
+  useEffect(() => {
+    async function fetchUsers() {
+      const data = await fetch(
+        "https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users"
+      ).then((res) => res.json());
+      setUsers(data);
+    }
+    fetchUsers();
+  }, []);
+  console.log(users);
+
   return (
     <>
       <>
@@ -127,89 +151,94 @@ function Users() {
                   </td>
                   <td className="fs-12 fw-6 text-sub-sec"></td>
                 </tr>
-                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((id) => (
-                  <tr key={id} className="align-middle">
-                    <td>
-                      <span className="fs-14 text-sub-sec fw-4">Lendsqr</span>
-                    </td>
-                    <td>
-                      <span className="fs-14 text-sub-sec fw-4">Adedeji</span>
-                    </td>
-                    <td>
-                      <span className="fs-14 text-sub-sec fw-4">
-                        adedeji@lendsqr.com
-                      </span>
-                    </td>
-                    <td>
-                      <span className="fs-14 text-sub-sec fw-4">
-                        08078903721
-                      </span>
-                    </td>
-                    <td>
-                      <span className="fs-14 text-sub-sec fw-4">
-                        May 15, 2020 10:00 AM
-                      </span>
-                    </td>
-                    <td>
-                      <span className="table-status-btn fs-14 fw-4 text-sub-sec py-2 px-3">
-                        Inactive
-                      </span>
-                    </td>
-                    <td>
-                      <span>
-                        <div className="dropdown">
-                          <button
-                            className="no-btn"
-                            type="button"
-                            id="dropdownMenuButton1"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                          >
-                            <img
-                              src="/images/dashboard/verticaldots.png"
-                              alt=""
-                            />
-                          </button>
-                          <ul
-                            className="dropdown-menu "
-                            aria-labelledby="dropdownMenuButton1"
-                          >
-                            <li onClick={() => toUserDetails(id.toString())}>
-                              <span className="dropdown-item fs-14 fw-5 text-sub-sec">
-                                <img
-                                  src="/images/dashboard/viewde.png"
-                                  alt=""
-                                  className="pe-2"
-                                />
-                                View Details
-                              </span>
-                            </li>
-                            <li>
-                              <span className="dropdown-item fs-14 fw-5 text-sub-sec">
-                                <img
-                                  src="/images/dashboard/blacklistuser.png"
-                                  alt=""
-                                  className="pe-2"
-                                />
-                                Blacklist User
-                              </span>
-                            </li>
-                            <li>
-                              <span className="dropdown-item fs-14 fw-5 text-sub-sec">
-                                <img
-                                  src="/images/dashboard/activateuser.png"
-                                  alt=""
-                                  className="pe-2"
-                                />
-                                Activate User
-                              </span>
-                            </li>
-                          </ul>
-                        </div>
-                      </span>
-                    </td>
-                  </tr>
-                ))}
+                {users &&
+                  users.map((user) => (
+                    <tr key={user.id} className="align-middle">
+                      <td>
+                        <span className="fs-14 text-sub-sec fw-4">
+                          {user.orgName}
+                        </span>
+                      </td>
+                      <td>
+                        <span className="fs-14 text-sub-sec fw-4">
+                          {user.userName}
+                        </span>
+                      </td>
+                      <td>
+                        <span className="fs-14 text-sub-sec fw-4">
+                          {user.email}
+                        </span>
+                      </td>
+                      <td>
+                        <span className="fs-14 text-sub-sec fw-4">
+                          {user.phoneNumber}
+                        </span>
+                      </td>
+                      <td>
+                        <span className="fs-14 text-sub-sec fw-4">
+                          {user.createdAt}
+                        </span>
+                      </td>
+                      <td>
+                        <span className="table-status-btn-active fs-14 fw-4 text-sub-sec py-2 px-3">
+                          Active
+                        </span>
+                      </td>
+                      <td>
+                        <span>
+                          <div className="dropdown">
+                            <button
+                              className="no-btn"
+                              type="button"
+                              id="dropdownMenuButton1"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              <img
+                                src="/images/dashboard/verticaldots.png"
+                                alt=""
+                              />
+                            </button>
+                            <ul
+                              className="dropdown-menu "
+                              aria-labelledby="dropdownMenuButton1"
+                            >
+                              <li onClick={() => toUserDetails(user.id)}>
+                                <span className="dropdown-item fs-14 fw-5 text-sub-sec">
+                                  <img
+                                    src="/images/dashboard/viewde.png"
+                                    alt=""
+                                    className="pe-2"
+                                  />
+                                  View Details
+                                </span>
+                              </li>
+                              <li>
+                                <span className="dropdown-item fs-14 fw-5 text-sub-sec">
+                                  <img
+                                    src="/images/dashboard/blacklistuser.png"
+                                    alt=""
+                                    className="pe-2"
+                                  />
+                                  Blacklist User
+                                </span>
+                              </li>
+                              <li>
+                                <span className="dropdown-item fs-14 fw-5 text-sub-sec">
+                                  <img
+                                    src="/images/dashboard/activateuser.png"
+                                    alt=""
+                                    className="pe-2"
+                                  />
+                                  Activate User
+                                </span>
+                              </li>
+                            </ul>
+                          </div>
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
               </tbody>
             </table>
           </div>
