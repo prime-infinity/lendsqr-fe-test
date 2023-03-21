@@ -1,12 +1,19 @@
+import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "./DashBoard/Navbar";
 import SideBar from "./DashBoard/Sidebar";
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function DashBoard() {
+  const [sidebarActive, setSidebarActive] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarActive(!sidebarActive);
+  };
+
   return (
     <div className="dashboard">
-      <Navbar />
-      <SideBar />
+      <Navbar toggleSidebar={toggleSidebar} />
+      <SideBar active={sidebarActive} />
 
       <div
         className="dashboard_sub container-fluid pb-5"

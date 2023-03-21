@@ -1,5 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-function Navbar() {
+
+type NavbarProps = {
+  toggleSidebar: () => void;
+};
+
+const Navbar = ({ toggleSidebar }: NavbarProps) => {
+  const handleClick = () => {
+    toggleSidebar();
+  };
   return (
     <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-white">
       <div className="container-fluid px-4 py-3">
@@ -17,15 +25,7 @@ function Navbar() {
             />
           </div>
         </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <button onClick={handleClick} className="navbar-toggler" type="button">
           <span className="navbar-toggler-icon"></span>
         </button>
         <div
@@ -91,5 +91,5 @@ function Navbar() {
       </div>
     </nav>
   );
-}
+};
 export default Navbar;

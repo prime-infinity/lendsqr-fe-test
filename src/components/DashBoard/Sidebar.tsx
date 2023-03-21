@@ -1,6 +1,10 @@
-function SideBar() {
+type SidebarProps = {
+  active: boolean;
+};
+
+const SideBar = ({ active }: SidebarProps) => {
   return (
-    <div className="sidebar d-none d-md-block">
+    <div className={`sidebar d-md-block ${active && "d-none"}`}>
       <ul>
         <li className="d-flex align-items-center">
           <span className="sidebar_icon">
@@ -141,5 +145,5 @@ function SideBar() {
       </ul>
     </div>
   );
-}
+};
 export default SideBar;
