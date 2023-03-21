@@ -9,7 +9,6 @@ function Users() {
   let navigate = useNavigate();
   const toUserDetails = (id: string): void => {
     navigate(`/dashboard/user-details/${id}`);
-    console.log(id);
   };
 
   interface UserData {
@@ -223,7 +222,7 @@ function Users() {
                               className="dropdown-menu "
                               aria-labelledby="dropdownMenuButton1"
                             >
-                              <li onClick={() => toUserDetails("2")}>
+                              <li onClick={() => toUserDetails(user.id)}>
                                 <span className="dropdown-item fs-14 fw-5 text-sub-sec">
                                   <img
                                     src="/images/dashboard/viewde.png"
