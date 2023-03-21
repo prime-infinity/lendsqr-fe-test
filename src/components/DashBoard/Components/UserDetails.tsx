@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import {
+  loadSingleUserFromLocal,
+  saveSingleUserToLocal,
+} from "../../../helpers/storage";
 
 /**
  *
@@ -52,12 +56,29 @@ function UserDetails() {
 
   const [UserDetails, setUserDetails] = useState<UserData | null>(null);
 
+  /**
+   * the code below is cheching if this user
+   * is already stored in the localstorage, if so
+   * just get, if not, fetch from api and store
+   * again, this method should not be used in production,
+   * unless it is being updated once the user makes any edits
+   */
+
   useEffect(() => {
+    const localDataUser = loadSingleUserFromLocal(id);
+    if (localDataUser) {
+      // Data found in localStorage, use it instead of fetching from the API
+      setUserDetails(localDataUser as unknown as UserData);
+      return; // stop further execution of the useEffect hook
+    }
+
+    // Data not found in localStorage, fetch from API and save to localStorage
     const fetchUser = async () => {
       const data = await fetch(
         `https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users/${id}`
       ).then((res) => res.json());
       setUserDetails(data);
+      saveSingleUserToLocal(data, id);
     };
     fetchUser();
   }, [id]);

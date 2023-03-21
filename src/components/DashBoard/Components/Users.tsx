@@ -39,13 +39,13 @@ function Users() {
     }
 
     // Data not found in localStorage, fetch from API and save to localStorage
-    async function fetchUsers() {
+    const fetchUsers = async () => {
       const data = await fetch(
         "https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users"
       ).then((res) => res.json());
       setUsers(data);
       saveAllUsersToLocal(data);
-    }
+    };
     fetchUsers();
   }, []);
 
