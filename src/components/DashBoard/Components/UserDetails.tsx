@@ -105,10 +105,7 @@ function UserDetails() {
                 </div>
               </div>
             </div>
-            <div
-              className="row pt-5 flex-nowrap"
-              style={{ overflowX: "scroll" }}
-            >
+            <div className="row pt-5 flex-nowrap" style={{ overflowX: "auto" }}>
               <div className="col-md-2 col-5 text-center pb-2 fs-16 text-hover-to-pri">
                 General Details
               </div>
@@ -154,8 +151,7 @@ function UserDetails() {
                 <td>07060780922</td>
                 <td>Female</td>
               </tr>
-            </tbody>{" "}
-            <br />
+            </tbody>
             <thead>
               <tr>
                 <th scope="col">Marital status</th>
@@ -195,8 +191,7 @@ function UserDetails() {
                 <td>FinTech</td>
                 <td>2 years</td>
               </tr>
-            </tbody>{" "}
-            <br />
+            </tbody>
             <thead>
               <tr>
                 <th scope="col">office email</th>
@@ -234,7 +229,7 @@ function UserDetails() {
                 <td>Grace Effiom</td>
                 <td>@grace_effiom</td>
               </tr>
-            </tbody>{" "}
+            </tbody>
           </table>
         </div>
         <div className="col-12 ps-4 ms-2 pe-5">
@@ -260,7 +255,7 @@ function UserDetails() {
                 <td>debby@gmail.com</td>
                 <td>Sister</td>
               </tr>
-            </tbody>{" "}
+            </tbody>
           </table>
         </div>
       </div>

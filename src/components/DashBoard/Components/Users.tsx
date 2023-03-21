@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {
+  loadAllUsersFromLocal,
+  saveAllUsersToLocal,
+} from "../../../helpers/storage";
 
 function Users() {
   let navigate = useNavigate();
   const toUserDetails = (id: string): void => {
-    navigate("/dashboard/user-details");
+    navigate(`/dashboard/user-details/${id}`);
     console.log(id);
   };
 
@@ -19,16 +23,32 @@ function Users() {
 
   const [users, setUsers] = useState<UserData[]>([]);
 
+  /* 
+    the following code checks if the data already
+    exists in the localstorege, if it does, it retrives it
+    if not, it fetches it and saves to local storage.
+    this is not advised in production though. we should use time
+    to expire of typically 5 - 30mins
+   */
   useEffect(() => {
+    const localDataAllUsers = loadAllUsersFromLocal();
+
+    if (localDataAllUsers) {
+      // Data found in localStorage, use it instead of fetching from the API
+      setUsers(localDataAllUsers);
+      return; // stop further execution of the useEffect hook
+    }
+
+    // Data not found in localStorage, fetch from API and save to localStorage
     async function fetchUsers() {
       const data = await fetch(
         "https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users"
       ).then((res) => res.json());
       setUsers(data);
+      saveAllUsersToLocal(data);
     }
     fetchUsers();
   }, []);
-  console.log(users);
 
   return (
     <>
@@ -203,7 +223,7 @@ function Users() {
                               className="dropdown-menu "
                               aria-labelledby="dropdownMenuButton1"
                             >
-                              <li onClick={() => toUserDetails(user.id)}>
+                              <li onClick={() => toUserDetails("2")}>
                                 <span className="dropdown-item fs-14 fw-5 text-sub-sec">
                                   <img
                                     src="/images/dashboard/viewde.png"
