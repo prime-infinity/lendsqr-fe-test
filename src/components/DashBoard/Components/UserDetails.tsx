@@ -105,23 +105,26 @@ function UserDetails() {
                 </div>
               </div>
             </div>
-            <div className="row pt-5">
-              <div className="col-2 text-center pb-2 fs-16 text-hover-to-pri">
+            <div
+              className="row pt-5 flex-nowrap"
+              style={{ overflowX: "scroll" }}
+            >
+              <div className="col-md-2 col-5 text-center pb-2 fs-16 text-hover-to-pri">
                 General Details
               </div>
-              <div className="col-2 text-center pb-2 fs-16 text-hover-to-pri">
+              <div className="col-md-2 col-5 text-center pb-2 fs-16 text-hover-to-pri">
                 Documents
               </div>
-              <div className="col-2 text-center pb-2 fs-16 text-hover-to-pri">
+              <div className="col-md-2 col-5 text-center pb-2 fs-16 text-hover-to-pri">
                 Bank Details
               </div>
-              <div className="col-2 text-center pb-2 fs-16 text-hover-to-pri">
+              <div className="col-md-2 col-5 text-center pb-2 fs-16 text-hover-to-pri">
                 Loans
               </div>
-              <div className="col-2 text-center pb-2 fs-16 text-hover-to-pri">
+              <div className="col-md-2 col-5 text-center pb-2 fs-16 text-hover-to-pri">
                 Savings
               </div>
-              <div className="col-2 text-center pb-2 fs-16 text-hover-to-pri">
+              <div className="col-md-2 col-5 text-center pb-2 fs-16 text-hover-to-pri">
                 App and System
               </div>
             </div>
@@ -133,7 +136,7 @@ function UserDetails() {
           <span className="fs-16 fw-5 text-sec">Personal Information</span>
         </div>
         <div className="table-responsive p-0 m-0">
-          <table className="table table-borderless ps-4 pe-4 pb-4 pt-3">
+          <table className="table table-borderless ps-4 pe-4 pb-4 pt-3 mb-0">
             <thead>
               <tr>
                 <th scope="col">full Name</th>
@@ -168,22 +171,97 @@ function UserDetails() {
               </tr>
             </tbody>
           </table>
-          {/*<table className="table table-borderless ps-4 pe-4 pb-4 pt-3">
+        </div>
+        <div className="col-12 ps-4 ms-2 pe-5">
+          <hr />
+        </div>
+        <div className="col-12 ps-4 ms-2 pt-3">
+          <span className="fs-16 fw-5 text-sec">Education and Employment</span>
+        </div>
+        <div className="table-responsive p-0 m-0">
+          <table className="table table-borderless ps-4 pe-4 pb-4 pt-3 mb-0">
             <thead>
               <tr>
-                <th scope="col">Marital status</th>
-                <th scope="col">Children</th>
-                <th scope="col">Type of residence</th>
+                <th scope="col">level of education</th>
+                <th scope="col">employment status</th>
+                <th scope="col">sector of employment</th>
+                <th scope="col">Duration of employment</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Single</td>
-                <td>None</td>
-                <td>Parent’s Apartment</td>
+                <td>B.Sc</td>
+                <td>Employed</td>
+                <td>FinTech</td>
+                <td>2 years</td>
+              </tr>
+            </tbody>{" "}
+            <br />
+            <thead>
+              <tr>
+                <th scope="col">office email</th>
+                <th scope="col">Monthly income</th>
+                <th scope="col">loan repayment</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>grace@lendsqr.com</td>
+                <td>₦200,000.00- ₦400,000.00</td>
+                <td>40,000</td>
               </tr>
             </tbody>
-            </table>*/}
+          </table>
+        </div>
+        <div className="col-12 ps-4 ms-2 pe-5">
+          <hr />
+        </div>
+        <div className="col-12 ps-4 ms-2 pt-3">
+          <span className="fs-16 fw-5 text-sec">Socials</span>
+        </div>
+        <div className="table-responsive p-0 m-0">
+          <table className="table table-borderless ps-4 pe-4 pb-4 pt-3 mb-0">
+            <thead>
+              <tr>
+                <th scope="col">Twitter</th>
+                <th scope="col">Facebook</th>
+                <th scope="col">Instagram</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>@grace_effiom</td>
+                <td>Grace Effiom</td>
+                <td>@grace_effiom</td>
+              </tr>
+            </tbody>{" "}
+          </table>
+        </div>
+        <div className="col-12 ps-4 ms-2 pe-5">
+          <hr />
+        </div>
+        <div className="col-12 ps-4 ms-2 pt-3">
+          <span className="fs-16 fw-5 text-sec">Guarantor</span>
+        </div>
+        <div className="table-responsive p-0 m-0">
+          <table className="table table-borderless ps-4 pe-4 pb-4 pt-3 mb-0">
+            <thead>
+              <tr>
+                <th scope="col">full Name</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Email Address</th>
+                <th scope="col">Relationship</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Debby Ogana</td>
+                <td>07060780922</td>
+                <td>debby@gmail.com</td>
+                <td>Sister</td>
+              </tr>
+            </tbody>{" "}
+          </table>
         </div>
       </div>
     </>
